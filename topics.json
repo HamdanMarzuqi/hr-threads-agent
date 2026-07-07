@@ -1,0 +1,84 @@
+{
+  "topics": [
+    {
+      "category": "Relasi Karyawan",
+      "items": [
+        "Cara memberikan feedback negatif tanpa merusak motivasi karyawan",
+        "Menangani karyawan yang sering datang terlambat secara bijak",
+        "Cara HR memediasi konflik antar karyawan",
+        "Tanda-tanda karyawan sedang mengalami burnout dan cara membantu",
+        "Cara melakukan pemutusan hubungan kerja dengan profesional dan manusiawi"
+      ]
+    },
+    {
+      "category": "Rekrutmen & Seleksi",
+      "items": [
+        "Red flags yang sering diabaikan saat proses interview",
+        "Pertanyaan yang tidak boleh ditanyakan saat interview (menurut hukum ketenagakerjaan)",
+        "Cara membaca CV dengan cepat dan efektif dalam waktu 30 detik",
+        "Kesalahan umum yang dilakukan kandidat saat interview dan pelajaran buat HR",
+        "Cara menulis job description yang menarik kandidat berkualitas"
+      ]
+    },
+    {
+      "category": "Regulasi Ketenagakerjaan",
+      "items": [
+        "Aturan lembur karyawan yang wajib diketahui HR di Indonesia",
+        "Hak cuti karyawan berdasarkan UU Ketenagakerjaan Indonesia",
+        "Hal-hal yang wajib ada dalam kontrak kerja karyawan",
+        "Perbedaan karyawan tetap, kontrak (PKWT), dan freelancer secara hukum",
+        "Apa yang harus dilakukan HR jika ada karyawan yang mengajukan resign mendadak"
+      ]
+    },
+    {
+      "category": "Budaya Perusahaan",
+      "items": [
+        "Tanda-tanda budaya kerja perusahaan sudah toxic dan cara mendeteksinya",
+        "Cara membangun psychological safety di lingkungan kerja",
+        "Mengapa karyawan terbaik resign — dan apa yang bisa HR lakukan",
+        "Peran HR dalam membangun budaya perusahaan yang inklusif",
+        "Cara mengurangi gossip dan politik kantor yang merusak produktivitas"
+      ]
+    },
+    {
+      "category": "Onboarding & Retensi",
+      "items": [
+        "Framework onboarding 30-60-90 hari yang efektif untuk karyawan baru",
+        "Mengapa onboarding yang buruk menyebabkan early turnover",
+        "Cara membuat program buddy/mentor untuk karyawan baru",
+        "Strategi retensi karyawan generasi Z yang perlu diketahui HR",
+        "Cara melakukan stay interview sebelum karyawan memutuskan resign"
+      ]
+    },
+    {
+      "category": "Tren HR Terkini",
+      "items": [
+        "Bagaimana AI mulai mengubah proses rekrutmen di perusahaan-perusahaan besar",
+        "Quiet quitting: fenomena nyata atau sekadar label baru untuk karyawan demotivasi?",
+        "4-day work week: pro dan kontra dari perspektif HR",
+        "People analytics: bagaimana data membantu HR membuat keputusan lebih baik",
+        "Skill HR yang paling dibutuhkan di era digitalisasi"
+      ]
+    },
+    {
+      "category": "Gaji & Kompensasi",
+      "items": [
+        "Cara menyusun struktur gaji yang adil dan transparan",
+        "Apa itu total rewards dan kenapa lebih dari sekadar gaji pokok",
+        "Cara HR menjawab pertanyaan 'berapa ekspektasi gaji kamu?' dengan bijak",
+        "Kapan perusahaan wajib melakukan salary review?",
+        "Cara menjelaskan ke karyawan kenapa gaji mereka tidak naik tahun ini"
+      ]
+    },
+    {
+      "category": "Pengembangan SDM",
+      "items": [
+        "Cara membuat Individual Development Plan (IDP) yang benar-benar dipakai",
+        "Perbedaan coaching, mentoring, dan counseling dalam konteks HR",
+        "Cara identifikasi karyawan berpotensi tinggi (high potential) dalam tim",
+        "Mengapa training saja tidak cukup untuk mengembangkan karyawan",
+        "Cara HR memfasilitasi knowledge transfer saat karyawan senior akan pensiun atau resign"
+      ]
+    }
+  ]
+}
