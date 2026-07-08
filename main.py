@@ -26,13 +26,19 @@ from telegram_bot import (
 )
 import schedule_manager
 
+import os
+from pathlib import Path
+
 # ── Logging Setup ────────────────────────────────────────────────────────────
+DATA_DIR = Path(os.environ.get("DATA_DIR", Path(__file__).parent))
+LOG_PATH = DATA_DIR / "agent.log"
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     handlers=[
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler("agent.log", encoding="utf-8")
+        logging.FileHandler(LOG_PATH, encoding="utf-8")
     ]
 )
 logger = logging.getLogger(__name__)

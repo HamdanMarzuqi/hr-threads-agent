@@ -13,6 +13,7 @@ import sqlite3
 import logging
 from datetime import datetime, timedelta
 from pathlib import Path
+import os
 
 from tavily import TavilyClient
 
@@ -21,7 +22,8 @@ import config
 logger = logging.getLogger(__name__)
 
 TOPICS_PATH = Path(__file__).parent / "topics.json"
-DB_PATH = Path(__file__).parent / "content_log.db"
+DATA_DIR = Path(os.environ.get("DATA_DIR", Path(__file__).parent))
+DB_PATH = DATA_DIR / "content_log.db"
 
 # ── Inisialisasi Database ────────────────────────────────────────────────────
 

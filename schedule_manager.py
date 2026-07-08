@@ -9,10 +9,12 @@ import sqlite3
 import logging
 from datetime import datetime
 from pathlib import Path
+import os
 
 logger = logging.getLogger(__name__)
 
-DB_PATH = Path(__file__).parent / "content_log.db"
+DATA_DIR = Path(os.environ.get("DATA_DIR", Path(__file__).parent))
+DB_PATH = DATA_DIR / "content_log.db"
 
 
 def init_schedule_db() -> None:
