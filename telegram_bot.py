@@ -54,17 +54,28 @@ async def send_draft_for_review(content: dict) -> None:
     """
     Kirim draft konten ke HR via Telegram untuk direview.
     Menyimpan state pending dan set timer pengingat + auto-skip.
+
+    PENTING: Selalu clear semua konten pending sebelumnya agar
+    /approve selalu mengambil konten yang paling baru di-generate.
     """
     content_id = content["id"]
     draft = content["draft"]
     topic = content["topic"]
     category = content["category"]
 
+    # Clear semua konten pending sebelumnya agar /approve selalu
+    # mengambil konten terbaru, bukan konten lama.
+    if _pending_content:
+        old_ids = list(_pending_content.keys())
+        logger.info(f"Menghapus {len(old_ids)} konten pending lama: {old_ids}")
+        _pending_content.clear()
+
     _pending_content[content_id] = {
         "draft": draft,
         "topic": topic,
         "category": category
     }
+    logger.info(f"Konten baru (ID: {content_id}) disimpan sebagai pending. Total pending: {len(_pending_content)}")
 
     bot = Bot(token=config.TELEGRAM_BOT_TOKEN)
 
@@ -313,8 +324,19 @@ async def cmd_generate(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     await update.message.reply_text("⏳ Sedang men-generate draft konten. Mohon tunggu sekitar 1-2 menit...")
     
     if _generate_callback:
-        # Run in background to not block Telegram updates
-        asyncio.create_task(_generate_callback())
+        # PENTING: Await callback agar generate selesai sepenuhnya dan
+        # konten baru tersimpan di _pending_content SEBELUM user bisa /approve.
+        # Sebelumnya menggunakan create_task() (fire-and-forget) yang menyebabkan
+        # race condition: /approve bisa dijalankan sebelum konten baru siap,
+        # sehingga mengambil konten lama.
+        try:
+            await _generate_callback()
+        except Exception as e:
+            logger.error(f"Generate via /generate gagal: {e}", exc_info=True)
+            await update.message.reply_text(
+                f"❌ Gagal men-generate konten: `{e}`",
+                parse_mode=ParseMode.MARKDOWN
+            )
     else:
         await update.message.reply_text("❌ Callback generator belum diset.")
 
